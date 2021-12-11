@@ -32,6 +32,6 @@ int main(){
 
     }
 
-    cout<<respuesta;
+    cout<<respuesta<<endl;
     return 0;
 }

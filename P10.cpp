@@ -27,6 +27,6 @@ int main(){
         }
     }
 
-    cout<<resultado;
+    cout<<resultado<<endl;
     return 0;
 }
