@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
 
-    int n, n1=0, n2;
+    int n, ant=0, mayor=0;
 
     while(true){
 
@@ -11,14 +11,14 @@ int main(){
 
         if (n==0){
             break;
-        }else if(n>n1 and n>n2){
-            n2=n;
+        }else if(n>ant and n>mayor){
+            mayor=n;
         }
 
-        n1=n;
+        ant=n;
     }
 
-    cout<<"El numero mayor fue: "<<n2<<endl;
+    cout<<"El numero mayor fue: "<<mayor<<endl;
 
     return 0;
 }

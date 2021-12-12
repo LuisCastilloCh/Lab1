@@ -6,7 +6,7 @@ int main(){
     int n1,n2; string op; float res=0;; bool ban=false;
 
     cout<<"Ingresa el primer numero: ";cin>>n1;
-    cout<<"Ingresa el operador (x,,+,-,/): ";cin>>op;
+    cout<<"Ingresa el operador (x,+,-,/): ";cin>>op;
     cout<<"Ingresa el segundo numero: ";cin>>n2;
 
     if(op=="+"){

@@ -1,10 +1,10 @@
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 
 int main(){
 
-      unsigned long long numero;
+       unsigned long long numero;
        cout<<"numero: ";cin>>numero;
 
        unsigned long long i=10;
@@ -28,7 +28,7 @@ int main(){
            numero-=(auxiliar*i);
        }
 
-       suma_total+=numero*numero;
+       suma_total+=pow(numero, numero);
 
        cout<<suma_total<<endl;
 

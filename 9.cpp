@@ -1,5 +1,4 @@
 #include<iostream>
-#include<math.h>
 using namespace std;
 
 int main(){
@@ -10,7 +9,7 @@ int main(){
     cout<<"Dame el radio de un circulo: "; cin>>radio;
 
     double perimetro=2*pi*radio;
-    double area=pi*pow(radio, 2);
+    double area=pi*(radio*radio);
 
     cout<<"El perimetro del circulo de radio "<<radio<<" es: "<<perimetro<<endl;
     cout<<"El area del circulo de radio "<<radio<<" es: "<<area<<endl;

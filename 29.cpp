@@ -21,12 +21,12 @@ int main(){
 
         if(signo=='<'){//mi numero es menor
             if(c==0){
-                num=B+1;
+                num=B-1;
                 B =(rand()%B);
                 cout<<"///"<<B;
             }
             else{
-                num=B+1;
+                num=B-1;
                 resta=(num)-(bant);
                 B =(rand()%resta)+bant;
             }

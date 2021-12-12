@@ -8,7 +8,7 @@ int main(){
 
     cout<<"Ingresa una letra:  ";cin>>n;
 
-    string mayus="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+    string mayus="ACBDEFGHIJKLMNÑOPQRSTUVWXYZ";
     int len=mayus.length();
 
     for (int i=0;i<=len-1;i++){
