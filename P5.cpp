@@ -3,75 +3,29 @@ using namespace std;
 
 int main(){
 
-   //1ra trangulo
+   //En la serie de Fibonacci, cada número es la suma de los 2 anteriores e inicia con 1 y
+   //1. Ej: 1, 1, 2, 3, 5, 8, ....
+   //Escriba un programa que reciba un número n y halle la suma de todos los números pares en la serie
 
-    int numero,espacios_inical ;
+  int a=1,b=1,c,numero;
+  cout<<"numero: ";cin>>numero;
 
-    cout<<"ingresa tu numero impar: ";cin>>numero;
+  int suma=0;
 
-    espacios_inical=((numero+1)/2)-1;
+  while(b<numero){
 
+      c=a+b;
+      a=b;
+      b=c;
 
-    for(int i=1;i<=numero;i+=2){
+      if(b%2==0){
 
-        int contador1=0;
-
-        while (contador1<espacios_inical){
-                cout<<" ";
-                contador1+=1;
-
-        }
-
-        int contador2=0;
-
-        while(contador2<i){
-                contador2+=1;
-                cout<<"*";
-        }
-
-        int contador3=0;
-
-        while (contador3<espacios_inical){
-                cout<<" ";
-                contador3+=1;
-        }
-
-        espacios_inical-=1;
-        cout<<""<<endl;
-
-    }
-
-    int espacios=1;
-
-    //segundo triangulo
-
-    for(int i=numero-2;i>=1;i-=2){
-
-       int contador1=0;
-
-       while(contador1<espacios){
-           contador1++;
-           cout<<" ";
-       }
-
-       int contador2=0;
-
-       while(contador2<i){
-           contador2++;
-           cout<<"*";
-       }
-
-      int contador3=0;
-
-      while(contador3<espacios){
-          contador3++;
-          cout<<" ";
+          if(b<numero){
+              suma+=b;
+          }
       }
+  }
+  cout<<suma<<endl;
+  return 0;
 
-      espacios++;
-      cout<<""<<endl;
-   }
-
-    return 0;
-
-}
+ }

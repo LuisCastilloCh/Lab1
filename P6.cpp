@@ -1,21 +1,39 @@
 #include <iostream>
-using namespace std;
 
+using namespace std;
 int main(){
 
- int numero;
-  cout<<"ingresa el numero: ";cin>>numero;
-  float resultado=1.0;
+   //Escriba un programa que reciba 3 números a, b, c, y calcule la suma de todos los múltiplos de a y b que sean menores a c. Tenga en cuenta no sumar 2 veces los múltiplos comunes
 
-  for(int au=1;au<=numero-1;au++){
-      float factorial=1.0;
-      for(int i=1;i<=au;i++){
-            factorial*=i;
-      }
-      resultado+=(1/factorial);
-  }
+    cout<<"a: ";
+    int a;
+    cin>>a;
 
-  cout<<resultado<<endl;
+    cout<<"b: ";
+    int b;
+    cin>>b;
+
+    cout<<"c: ";
+    int c;
+    cin>>c;
+
+    int suma=0;
+
+    for(int au=2;au<c;au++){
+        if(au%a==0){
+            suma+=au;
+            cout<<au<<" + ";
+        }
+    }
+
+    for(int au=2;au<c;au++){
+        if(au%b==0){
+            suma+=au;
+            cout<<au<<" + ";
+        }
+    }
+
+    cout<<"= "<<suma<<endl;
 
     return 0;
 }

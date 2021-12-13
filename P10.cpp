@@ -1,32 +1,41 @@
 #include <iostream>
 
 using namespace std;
+
 int main(){
 
-    //Escriba un programa que reciba un número n e imprima el enésimo número primo.
-    //Ej: Si recibe 4 el programa debe imprimir 7.
-    //Nota: la salida del programa debe ser: El primo numero 4 es: 7.
 
-    int numero;
-    int resultado=0;
-    cout<<"numero: ";
-    cin>>numero;
+    int numero,maximo_numero=0;
+    cout<<"numero: ";cin>>numero;
 
+    for(int au=1;au<numero;au++){
 
-    int contador=0;
-    for(int i=1;contador<numero;i++){
         int divisores=0;
-        for(int au=1;au<=i;au++){
-            if(i%au==0){
-                divisores+=1;
+
+        for(int i=2;i<=au;i++){
+
+            int prueba;
+            prueba=au%i;
+
+            if(prueba==0){
+                divisores++;
             }
         }
+
+        divisores++;
+
         if(divisores==2){
-            resultado=i;
-            contador+=1;
+
+            if(numero%au==0){
+
+                if(au>maximo_numero){maximo_numero=au;
+
+                }
+            }
         }
     }
 
-    cout<<resultado<<endl;
+    cout<<maximo_numero<<endl;
+
     return 0;
 }

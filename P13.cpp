@@ -1,34 +1,38 @@
 #include <iostream>
 
 using namespace std;
-
 int main(){
 
-   int numero;
-   cout<<"numero: ";cin>>numero;
+    cout<<"numero impar: ";
+    int numero,contador1=0;
+    cin>>numero;
 
-    int suma_primos=0;
+    int suma_principal=0;
+    for(int i=3;i<=numero;i+=2){
 
-    for(int au=1;au<numero;au++){
+        contador1+=1;
+        suma_principal+=i*i;
 
-        int divisores=0
-                ;
-        for(int i=2;i<=au;i++){
-            int prueba;
-            prueba=au%i;
-
-            if(prueba==0){divisores++;
-            }
-        }
-
-        divisores++;
-
-        if(divisores==2){
-            suma_primos+=au;
-        }
     }
 
-    cout<<suma_primos<<endl;
+    int suma_pares=0;
+
+    for(int i=2;i<=contador1*2;i+=2){
+        suma_pares+=i;
+    }
+
+    int suma_total=0;
+
+    int au;
+    au=suma_principal;
+
+    for(au;au!=(suma_principal-(suma_pares*4));au-=suma_pares){
+        suma_total+=au;
+    }
+
+    suma_total++;
+
+    cout<<suma_total<<endl;
 
     return 0;
 }

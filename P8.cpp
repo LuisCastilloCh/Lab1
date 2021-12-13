@@ -3,37 +3,30 @@
 using namespace std;
 int main(){
 
-   //Escriba un programa que reciba 3 números a, b, c, y calcule la suma de todos los múltiplos de a y b que sean menores a c. Tenga en cuenta no sumar 2 veces los múltiplos comunes
+    //Escriba un programa que reciba un número n e imprima el enésimo número primo.
+    //Ej: Si recibe 4 el programa debe imprimir 7.
+    //Nota: la salida del programa debe ser: El primo numero 4 es: 7.
 
-    cout<<"a: ";
-    int a;
-    cin>>a;
+    int numero;
+    int resultado=0;
+    cout<<"numero: ";
+    cin>>numero;
 
-    cout<<"b: ";
-    int b;
-    cin>>b;
 
-    cout<<"c: ";
-    int c;
-    cin>>c;
-
-    int suma=0;
-
-    for(int au=2;au<c;au++){
-        if(au%a==0){
-            suma+=au;
-            cout<<au<<" + ";
+    int contador=0;
+    for(int i=1;contador<numero;i++){
+        int divisores=0;
+        for(int au=1;au<=i;au++){
+            if(i%au==0){
+                divisores+=1;
+            }
+        }
+        if(divisores==2){
+            resultado=i;
+            contador+=1;
         }
     }
 
-    for(int au=2;au<c;au++){
-        if(au%b==0){
-            suma+=au;
-            cout<<au<<" + ";
-        }
-    }
-
-    cout<<"= "<<suma<<endl;
-
+    cout<<resultado<<endl;
     return 0;
 }

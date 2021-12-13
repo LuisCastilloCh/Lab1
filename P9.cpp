@@ -1,37 +1,37 @@
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 int main(){
 
-       unsigned long long numero;
-       cout<<"numero: ";cin>>numero;
+    //Escriba un programa que reciba un número y calcule el mínimo común múltiplo de
+    // todos los números enteros entre 1 y el número ingresado
 
-       unsigned long long i=10;
-       int dig=1;
+    int numero,respuesta, auxiliar, numeros_cumplen;
+    bool encontrado=true;
 
-       //saber cuantos digitos tiene el numero
-       for( i;(numero/i)!=0;i*=10){
-            dig+=1;
-       }
+    cout<<"Numero: ";cin>>numero;
 
-       int suma_total=0;
+    for(int i=2;encontrado;i++){
 
-       //para tener cada numero de izquierda a derecha; y lo guardamos en la V.auxiliar.
-       //cambiamos el valor de V.numero y de V.I para seguir teniendo dichos numeros.
+        if(i%numero==0){
 
-       for(i;i!=1;i=i/10){
+            auxiliar=numero-1;
+            numeros_cumplen=0;
 
-           int auxiliar=(numero/i);
-           suma_total+=auxiliar*auxiliar;
+            for(auxiliar;auxiliar>=1;auxiliar-=1){
+                if(i%auxiliar==0){
+                    numeros_cumplen+=1;
+                }
+            }
 
-           numero-=(auxiliar*i);
-       }
+            if(numeros_cumplen==numero-1){;
+                respuesta=i;
+                break;
+            }
+        }
 
-       suma_total+=pow(numero, numero);
+    }
 
-       cout<<suma_total<<endl;
-
-       return 0;
-
+    cout<<respuesta<<endl;
+    return 0;
 }

@@ -1,31 +1,37 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 int main(){
 
-   //En la serie de Fibonacci, cada número es la suma de los 2 anteriores e inicia con 1 y
-   //1. Ej: 1, 1, 2, 3, 5, 8, ....
-   //Escriba un programa que reciba un número n y halle la suma de todos los números pares en la serie
+       unsigned long long numero;
+       cout<<"numero: ";cin>>numero;
 
-  int a=1,b=1,c,numero;
-  cout<<"numero: ";cin>>numero;
+       unsigned long long i=10;
+       int dig=1;
 
-  int suma=0;
+       //saber cuantos digitos tiene el numero
+       for( i;(numero/i)!=0;i*=10){
+            dig+=1;
+       }
 
-  while(b<numero){
+       int suma_total=0;
 
-      c=a+b;
-      a=b;
-      b=c;
+       //para tener cada numero de izquierda a derecha; y lo guardamos en la V.auxiliar.
+       //cambiamos el valor de V.numero y de V.I para seguir teniendo dichos numeros.
 
-      if(b%2==0){
+       for(i;i!=1;i=i/10){
 
-          if(b<numero){
-              suma+=b;
-          }
-      }
-  }
-  cout<<suma<<endl;
-  return 0;
+           int auxiliar=(numero/i);
+           suma_total+=auxiliar*auxiliar;
 
- }
+           numero-=(auxiliar*i);
+       }
+
+       suma_total+=pow(numero, numero);
+
+       cout<<suma_total<<endl;
+
+       return 0;
+
+}

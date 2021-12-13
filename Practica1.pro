@@ -26,8 +26,6 @@ SOURCES += \
         P13.cpp \
         P14.cpp \
         P15.cpp \
-        P16.cpp \
-        P17.cpp \
         P2.cpp \
         P3.cpp \
         P4.cpp \

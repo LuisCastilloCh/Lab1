@@ -1,56 +1,67 @@
 #include <iostream>
 
 using namespace std;
+int main(){
 
-int main()
-{
-  //para ir almacenando los numeros palindromos,
-  //y guardar el mayor.
-  int resultado=0;
+    //La serie de Collatz se conforma con la siguiente regla: sea n un elemento de la serie,
+   //si n es par, el siguiente elemento es n/2, y si n es impar, el siguiente elemento es 3n+1.
+    //Escriba un programa que reciba un número k y calcule cual es el elemento inicial j (semilla), menor
+    //que k, que produce la serie más larga y diga cuantos términos m tiene la serie.
+    //1. Ej: 1, 1, 2, 3, 5, 8, ....
+
+   int numero;
+   cout<<"numero: ";
+   cin>>numero;
+   int numero_serie,auxiliar;
+   int tamanoSM=0;
+
+   for(int i=numero-1;i!=1;i-=1){
+
+       int tamanoS=0;
+       auxiliar=i;
+
+       while(auxiliar!=1){
+
+               if(auxiliar%2==0){
+                    tamanoS+=1;
+                    auxiliar=auxiliar/2;
+               }
+               else{
+                    tamanoS+=1;
+                    auxiliar=(3*auxiliar)+1;
+               }
+       }
+
+        if(tamanoS>tamanoSM){
+               numero_serie=i;
+
+               tamanoSM=tamanoS;
+        }
+   }
+
+   cout<<"la serie mas larga es con la semilla: ";
+   cout<<numero_serie;
+   cout<<" teniendo "<<tamanoSM+1<<" terminos ";
 
 
-  for(int A=122;A<=999;A++){
-      for(int B=122;B<=999;B++){
-          int residuo;
-          int primer_numero;
-          int numero1=A*B;
-          int numero1_copia=numero1;
-          int numero2=0;//almacenar el nuevo numero para probar si es palindromo;
-          //saber si es palindromo
+   //escribir serie
 
+   cout<<"serie: "<<numero_serie<<", ";
 
-          for(int AU=0;(numero1/10!=0);AU++){
-              residuo=numero1%10;
+   while(numero_serie!=1){
+           if(numero_serie%2==0){
+                numero_serie=numero_serie/2;
+                cout<<numero_serie<<", ";
+           }
+           else{
+                numero_serie=(3*numero_serie)+1;
+                cout<<numero_serie<<", ";
+           }
+   }
 
-              if(AU==1){
-                  primer_numero=residuo;
-                  numero1=numero1/10;
-              }
-              if(AU==2){
-                  numero2=(primer_numero*10)+residuo;
-                  numero1=numero1/10;
-              }
+   cout<<" "<<endl;
 
-              if(AU>2){
-                  numero2=(numero2*10)+residuo;
-                  numero1=numero1/10;
-              }
-          }
+   return 0;
 
-          residuo=numero1%10;
-          numero2=(numero2*10)+residuo;
-
-
-          if(numero1_copia==numero2){
-
-              if(numero1_copia>resultado){
-                  resultado=numero1_copia;
-              }
-          }
-      }
-  }
-
-  cout<<resultado<<endl;
-
-  return 0;
 }
+
