@@ -1,20 +1,28 @@
 #include<iostream>
-#include<math.h>
 using namespace std;
 
 int main(){
 
-    int n1, n2;
+    int A, B;
 
     cout<<"Dame el primer numero: ";
-    cin>>n1;
+    cin>>A;
 
     cout<<"Dame el segundo numero: ";
-    cin>>n2;
+    cin>>B;
 
-    double resultado=float(n1)/float(n2);
 
-    cout<<"El resultado de la division "<<n1<<"/"<<n2<<" con redondeo es: "<<lround(resultado)<<endl;
+    int auxiliar=float(A)/float(B);
+    double resultado=float(A)/float(B);
+
+
+    if((resultado+0.5)>=(auxiliar+1)){
+        cout<<A<<"/"<<B<<"="<<(auxiliar+1);
+    }else{
+        cout<<A<<"/"<<B<<"="<<auxiliar;
+    }
+
 
     return 0;
+
 }

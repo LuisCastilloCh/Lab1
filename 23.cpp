@@ -3,32 +3,24 @@ using namespace std;
 
 int main(){
 
-    int n1, n2, producto,num1, num2;
-    int mcd,mcm,residuo;
+    int A;cout<<"Numero A: ";cin>>A;
+    int B;cout<<"Numero B: ";cin>>B;
+    int multiplo;
+    bool ciclo=true;
 
-    cout<<"Ingresa el primer numero:  ";cin>>n1;
-    cout<<"Ingresa el segundo numero:  ";cin>>n2;
+    //generar multiplos de A.
+    for(int auxiliar=1;ciclo=true;auxiliar+=1){
+        int multiplo=A*auxiliar;
 
-    num1=n1;
-    num2=n2;
+        //saber si la V.multiplo lo es de B tambien
+        if(multiplo%B==0){
+            cout<<"Minimo comun multiplo: "<<multiplo<<endl;
+            break;
 
-    producto=n1*n2;
-
-    do{
-        residuo=n1%n2;
-
-        if (residuo!=0){
-            n1=n2;
-            n2=residuo;
-        }else{
-            mcd=n2;
         }
 
-    }while(residuo!=0);
-
-    mcm=producto/mcd;
-
-    cout<<"El minimo cumun multiplo de: "<<num1<<" y "<<num2<<" es: "<<mcm<<endl;
+    }
 
     return 0;
+
 }

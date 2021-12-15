@@ -3,31 +3,39 @@ using namespace std;
 
 int main(){
 
-    char letra;
-    string vocales="aeiouAEIOU", vocal;
-    string cons="bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
-    bool ban=false;
+    char vocales[]="aeiouAEIOU";
+    char cons[]="bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+
+    bool vocal=false;
     bool consonante=false;
 
-    cout<<"Ingrese una letra: ";cin>>letra;
+    char caracter;
+    cout<<"Ingrese un caracter: ";cin>>caracter;
 
-    for (int i=0;true;i++){
-        if (letra==vocales[i]){
-            ban=true;
-            break;
-        }else if(letra==cons[i]){
-            consonante=true;
+    //verificamos si es vocal.
+
+    for(int i=0;i<=9;i++){
+        if(vocales[i]==caracter){
+            vocal=true;
+            cout<<caracter<<" es una vocal.";
             break;
         }
     }
 
-    if (ban==true){
-        cout<<letra<<" : Es vocal";
-    }else if(consonante==true){
-        cout<<letra<<" : Es una consonante";
-    }else{
-        cout<<letra<<" : No es una letra";
+    //verificamos si es consonante.
+    if(vocal==false){
+
+        for(int i=0;i<=41;i++){
+            if(cons[i]==caracter){
+                consonante=true;
+                cout<<caracter<<" es una consonate.";
+                break;
+            }
+        }
     }
 
+    if(vocal==false and consonante==false){
+        cout<<caracter<<" no es una letra";
+    }
     return 0;
 }
